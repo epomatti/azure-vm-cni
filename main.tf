@@ -35,7 +35,7 @@ module "mssql" {
   public_network_access_enabled = var.mssql_public_network_access_enabled
   admin_admin                   = var.mssql_admin_login
   admin_login_password          = var.mssql_admin_login_password
-  default_subnet_id             = module.vnet.default_subnet_id
+  default_subnet_id             = module.vnet.vnet_id
 }
 
 module "vm" {
@@ -66,5 +66,5 @@ module "keyvault" {
   public_ip_addresses_allowed = [var.public_ip_address_to_allow]
   mssql_admin_login           = var.mssql_admin_login
   mssql_admin_login_password  = var.mssql_admin_login_password
-  storage_connection_string   = module.storage.connection_string
+  storage_connection_string   = module.storage.primary_blob_connection_string
 }

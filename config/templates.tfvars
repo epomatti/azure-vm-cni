@@ -1,6 +1,6 @@
 location = "eastus2"
 
-public_ip_address_to_allow = "177.132.135.248"
+public_ip_address_to_allow = ""
 
 # Virtual Machine
 vm_size = "Standard_B2ps_v2"
