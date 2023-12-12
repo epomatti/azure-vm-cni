@@ -23,7 +23,7 @@ Confirm that `cloud-init` has complete successfully.
 
 Connect via SSH to the virtual machine.
 
-Run the 
+Run the command to star the app container:
 
 ```sh
 sudo docker run -p 8080:8080 \
