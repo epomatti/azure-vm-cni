@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "github",
+        "godotenv",
+        "joho",
+        "MSSQL",
+        "mssqldb",
+        "sqlserver",
+        "strrow"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

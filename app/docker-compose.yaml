@@ -6,6 +6,11 @@ services:
       dockerfile: Dockerfile.amd64
     ports:
       - 8080:8080
+    environment:
+      - MSSQL_HOSTNAME=localhost
+      - MSSQL_PORT=1433
+      - MSSQL_USERNAME=sa
+      - MSSQL_PASSWORD=P@ssw0rd.123
     depends_on:
       - db
 
