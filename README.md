@@ -2,7 +2,7 @@
 
 Enabling containers to use Azure Virtual Network capabilities with [Azure CNI][1] and Azure Virtual Machines.
 
-> 💡 The documentation implies that CNI is required for containers to use Virtual Network capabilities, however, after finishing this project I discovered that CNI was not required to use Service Endpoints from a Virtual Machine.
+> 💡 The documentation implies that CNI is required for containers to use Virtual Network capabilities, however, after finishing this project I discovered that CNI was not required to use Service Endpoints from a Virtual Machine. Maybe it is already installed or something, did not investigate.
 
 ## Azure deploy
 
