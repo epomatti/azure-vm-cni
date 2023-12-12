@@ -10,7 +10,7 @@ resource "azurerm_subnet" "default" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.default.name
   address_prefixes     = ["10.0.0.0/24"]
-  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
+  service_endpoints    = ["Microsoft.KeyVault", "Microsoft.Sql", "Microsoft.Storage"]
 }
 
 resource "azurerm_network_security_group" "default" {
@@ -38,14 +38,14 @@ resource "azurerm_network_security_rule" "ssh" {
   network_security_group_name = azurerm_network_security_group.default.name
 }
 
-resource "azurerm_network_security_rule" "http" {
-  name                        = "http"
+resource "azurerm_network_security_rule" "app" {
+  name                        = "app"
   priority                    = 200
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "80"
+  destination_port_range      = "8080"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.resource_group_name
