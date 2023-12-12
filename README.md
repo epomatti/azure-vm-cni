@@ -27,10 +27,10 @@ Run the command to star the app container:
 
 ```sh
 sudo docker run -p 8080:8080 \
-    -e  'MSSQL_HOSTNAME=sqls-cni.database.windows.net' \
-    -e  'MSSQL_PORT=1433' \
-    -e  'MSSQL_USERNAME=dbadmin' \
-    -e  'MSSQL_PASSWORD=P4ssw0rd!2023' \
+    -e 'MSSQL_HOSTNAME=sqls-cni.database.windows.net' \
+    -e 'MSSQL_PORT=1433' \
+    -e 'MSSQL_USERNAME=dbadmin' \
+    -e 'MSSQL_PASSWORD=P4ssw0rd!2023' \
     epomatti/azure-vm-cni-app:arm64
 ```
 
