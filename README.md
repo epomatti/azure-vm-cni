@@ -21,6 +21,8 @@ terraform apply -auto-approve
 
 Confirm that `cloud-init` has complete successfully.
 
+Manually select the Service Endpoint Policy as it was having circular dependency issues.
+
 Connect via SSH to the virtual machine.
 
 Run the command to star the app container:

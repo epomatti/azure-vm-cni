@@ -11,6 +11,9 @@ resource "azurerm_subnet" "default" {
   virtual_network_name = azurerm_virtual_network.default.name
   address_prefixes     = ["10.0.0.0/24"]
   service_endpoints    = ["Microsoft.KeyVault", "Microsoft.Sql", "Microsoft.Storage"]
+
+  # Was having circular dependency issues with the service endpoint policy module
+  # service_endpoint_policy_ids = [var.policy_id]
 }
 
 resource "azurerm_network_security_group" "default" {

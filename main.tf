@@ -16,6 +16,13 @@ resource "azurerm_resource_group" "default" {
   location = var.location
 }
 
+module "service_endpoint_policy" {
+  source              = "./modules/service-endpoint-policy"
+  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.default.location
+  storage_account_id  = module.storage.storage_account_id
+}
+
 module "vnet" {
   source              = "./modules/vnet"
   workload            = local.workload
@@ -67,11 +74,4 @@ module "keyvault" {
   mssql_admin_login           = var.mssql_admin_login
   mssql_admin_login_password  = var.mssql_admin_login_password
   storage_connection_string   = module.storage.primary_blob_connection_string
-}
-
-module "service_endpoint_policy" {
-  source              = "./modules/service-endpoint-policy"
-  resource_group_name = azurerm_resource_group.default.name
-  location            = azurerm_resource_group.default.location
-  storage_account_id  = module.storage.storage_account_id
 }
